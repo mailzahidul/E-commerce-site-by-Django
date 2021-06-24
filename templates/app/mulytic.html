@@ -1,0 +1,27 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Customer Registration{% endblock title %}
+{% block main-content %}
+
+
+
+<div class="container">
+ <div class="row my-3">
+  <div class="col-sm-6 offset-sm-3">
+   <h3>Mulytic Test Solve</h3>
+    {% if messages %}
+        {% for message in messages %}
+            <div{% if message.tags %} class=" alert {{ message.tags }}"{% endif %} > {{ message }}</div>
+        {% endfor %}
+    {% endif %}
+   <hr>
+
+   <form action="" method="post" novalidate class="shadow p-5">
+    {% csrf_token %}
+    {{ forms.as_p }}
+    <input class="btn btn-primary"type="submit" value="Submit">
+   </form>
+  </div>
+ </div>
+</div>
+{% endblock main-content %}

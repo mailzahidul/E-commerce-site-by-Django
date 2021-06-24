@@ -1,0 +1,30 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Address{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+ <div class="row">
+  <h3>Welcome <span class="text-capitalize">{{ request.user.customer.name }}</span></h3>
+  <div class="col-sm-2 border-end">
+   <img src="" alt="" height="160">
+   <ul class="list-unstyled">
+    <li class="d-grid"><a href="{% url 'customer_address' %}" class="btn">Customer Address</a></li>
+    <li class="d-grid"><a href="{% url 'address' %}" class="btn">Addresses</a></li>
+   </ul>
+  </div>
+     {% for i in address %}
+       <div class="col-sm-5">
+      <div class="cart">
+          <div class="cart-body">
+              <h3>Address {{ forloop.counter }}</h3>
+              <p>Address: {{ i.address }}</p>
+              <p>District: {{ i.district }}</p>
+              <p>City: {{ i.city }}</p>
+              <p>Zipcode: {{ i.zipcode }}</p>
+          </div>
+      </div>
+  </div>
+     {% endfor %}
+ </div>
+</div>
+{% endblock main-content %}

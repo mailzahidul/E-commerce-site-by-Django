@@ -16,6 +16,7 @@
 3. User Profile create
 4. User Shipping Multiple Address create
 5. Order product
+6. Recently will work on SSLCommerce
 
 ### How to run this project
 1. Create an environment and run/active environment where you want to run this project.
